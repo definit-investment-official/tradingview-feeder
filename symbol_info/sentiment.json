@@ -1,6 +1,6 @@
 {
     "currency": [],
     "description": ["AAII survey - bullish percentage"],
-    "pricescale": [1],
+    "pricescale": [100],
     "symbol": ["AAII_BULLISH_PCT"]
 }
