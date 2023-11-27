@@ -1,6 +1,5 @@
 import pandas as pd
 import datetime as dt
-import os
 import argparse
 
 # * setup argument parser
