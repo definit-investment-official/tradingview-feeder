@@ -1,6 +1,10 @@
 import pandas as pd
 import datetime as dt
 import os
+import argparse
+
+# * setup argument parser
+parser = argparse.ArgumentParser(prog='TV Processor', description='Process data into an appropriate format to feed to TradingView', epilog='Enjoy it!')
 
 FILENAME = 'aaii_bullish_pct_raw'
 path = os.path.join('content', FILENAME + '.csv')
