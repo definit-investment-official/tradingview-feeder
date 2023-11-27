@@ -11,9 +11,13 @@ args = parser.parse_args()
 data_path = args.data_path
 export_path = args.export_path
 
-FILENAME = 'aaii_bullish_pct_raw'
-path = os.path.join('content', FILENAME + '.csv')
-df = pd.read_csv(path, parse_dates=['date'])
+# ? if export_path is not defined, use the uppercase version of data_path
+if not export_path:
+    export_path = data_path.replace('.csv', '').upper + '.csv'
+
+# FILENAME = 'aaii_bullish_pct_raw'
+# path = os.path.join('content', FILENAME + '.csv')
+df = pd.read_csv(data_path, parse_dates=['date'])
 
 df = df.sort_values(by='date')
 df['date'] = df['date'].apply(lambda d: dt.datetime.strftime(d, '%Y%m%d') + 'T')
