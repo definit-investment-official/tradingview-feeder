@@ -6,7 +6,10 @@ import argparse
 # * setup argument parser
 parser = argparse.ArgumentParser(prog='TV Processor', description='Process data into an appropriate format to feed to TradingView', epilog='Enjoy it!')
 parser.add_argument('--data_path', help='Path of raw data')
-parser.add_argument('--export_path', help='Path of processed data')
+parser.add_argument('--export_path', help='Path of processed data', default=None)
+args = parser.parse_args()
+data_path = args.data_path
+export_path = args.export_path
 
 FILENAME = 'aaii_bullish_pct_raw'
 path = os.path.join('content', FILENAME + '.csv')
