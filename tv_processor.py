@@ -13,7 +13,7 @@ export_path = args.export_path
 
 # ? if export_path is not defined, use the uppercase version of data_path
 if not export_path:
-    export_path = data_path.replace('.csv', '').upper + '.csv'
+    export_path = data_path.replace('.csv', '').upper() + '.csv'
 
 # FILENAME = 'aaii_bullish_pct_raw'
 # path = os.path.join('content', FILENAME + '.csv')
@@ -32,6 +32,4 @@ for c in df.columns:
 # TODO: validate data
 assert df.isnull().sum().sum() == 0, 'Data contains missing values'
 
-export_name = FILENAME.replace('_raw', '').upper()
-export_path = os.path.join('data', export_name + '.csv')
 df.to_csv(export_path, index=False, header=False)
