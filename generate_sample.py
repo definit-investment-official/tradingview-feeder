@@ -9,9 +9,6 @@ MAX_VALUE = 20
 MIN_VOLUME = 1000
 MAX_VOLUME = 5000
 
-# dates = [d.date() for d in pd.date_range(START_DATE, END_DATE)]
-# date_str = [dt.datetime.strftime(d, '%Y%m%d') + 'T' for d in dates]
-
 def generate_random_OHLCV(start_date, end_date, min_value, max_value, min_volume, max_volume):
     # Generate random datetime index between start_date and end_date
     date_range = pd.date_range(start=start_date, end=end_date)
